@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Asteroid : MonoBehaviour
+public class EnemyHealth : MonoBehaviour
 {
-	int health = 1;
+    public int health = 1;
 	public GameObject deathEffect;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
 	public void TakeDamage(int damage)
 	{
@@ -17,17 +23,7 @@ public class Asteroid : MonoBehaviour
 		}
 	}
 
-
-	private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            Die();
-        }
-       
-    }
-
-    void Die()
+	void Die()
 	{
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
 		Destroy(gameObject);

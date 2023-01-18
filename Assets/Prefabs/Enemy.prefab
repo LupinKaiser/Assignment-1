@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4909433135896607774}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.05, y: -1.47, z: 0}
+  m_LocalPosition: {x: 0.106, y: -0.092, z: 0}
   m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,7 +43,8 @@ GameObject:
   - component: {fileID: 4909433137301171608}
   - component: {fileID: 4909433137301171611}
   - component: {fileID: 4909433137301171610}
-  m_Layer: 0
+  - component: {fileID: 4023488865282460897}
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -57,9 +58,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4909433137301171607}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 610.9, y: 18.6, z: 6.1916447}
-  m_LocalScale: {x: 25, y: 25, z: 1}
+  m_LocalScale: {x: 9.452146, y: 8.108806, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4909433135896607775}
@@ -84,7 +85,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 13.7, y: 7.37}
+    newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -104,9 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 361fe94822cd5614a8b3cead9dd0d2b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
-  speed: 5
-  deathEffect: {fileID: 8401094045354379386, guid: 06fcaf04a6a50b64f94df85790b99638, type: 3}
+  speed: 2
+  deathEffect: {fileID: 8401094045354379386, guid: fe841108d32e33a4d9dadd8bd0b3de15, type: 3}
   groundDetection: {fileID: 4909433135896607775}
 --- !u!212 &4909433137301171610
 SpriteRenderer:
@@ -149,14 +149,28 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 551bed78a312ee74b83e9992197bf466, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a95cba9b990dcee44a29575b2fc33eb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 13.7, y: 7.37}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4023488865282460897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4909433137301171607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83213465d409f9f4e9ed5bdee2c161c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  deathEffect: {fileID: 0}

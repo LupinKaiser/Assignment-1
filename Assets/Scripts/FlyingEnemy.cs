@@ -6,10 +6,12 @@ public class FlyingEnemy : MonoBehaviour
 {
     public float speed;
     private GameObject player;
+   
 
     // Start is called before the first frame update
     void Start()
     {
+       
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -22,6 +24,7 @@ public class FlyingEnemy : MonoBehaviour
         }
         giveChase();
         Flip();
+
     }
 
     private void giveChase()
@@ -40,4 +43,5 @@ public class FlyingEnemy : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
+
 }

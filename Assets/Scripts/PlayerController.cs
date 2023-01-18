@@ -15,12 +15,16 @@ public class PlayerController : MonoBehaviour
     private bool isTouchingGround;
 
     private Animator playerAnimator;
+    //public GameObject deathEffect;
+    public int maxHealth = 3;
+    public float currentHealth; 
 
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -49,6 +53,46 @@ public class PlayerController : MonoBehaviour
 
         playerAnimator.SetFloat("Speed", Mathf.Abs(player.velocity.x));
         playerAnimator.SetBool("OnGround", isTouchingGround);
+
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        //Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Win")
+        {
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if (collision.tag == "Space")
+        {
+            //SceneManager.LoadScene("Fail");
+        }
+        if (collision.tag == "Enemy")
+        {
+            currentHealth = currentHealth - 1;
+            //healthBar.setHealth(currentHealth);
+            //FindObjectOfType<AudioManager>().Play("PlayerHit");
+
+        }
+        if (collision.tag == "Void")
+        {
+           //SceneManager.LoadScene("Fail");
+        }
     }
 
 }
