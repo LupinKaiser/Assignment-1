@@ -10,7 +10,7 @@ public class Goal : MonoBehaviour
     {
         if(collision.gameObject.name == "Player")
         {
-            SceneManager.LoadScene("End");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
     }
 }

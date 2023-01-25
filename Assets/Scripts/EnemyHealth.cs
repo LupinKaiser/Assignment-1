@@ -26,6 +26,7 @@ public class EnemyHealth : MonoBehaviour
 	void Die()
 	{
 		Instantiate(deathEffect, transform.position, Quaternion.identity);
+		FindObjectOfType<AudioManager>().Play("EnemyDeath");
 		Destroy(gameObject);
 	}
 }

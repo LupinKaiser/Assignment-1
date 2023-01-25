@@ -14,4 +14,14 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ReadInstrustions()
+    {
+        SceneManager.LoadScene("Instrustions");
+    }
+
+    public void Main()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }
